@@ -1,21 +1,17 @@
 import re
 from setuptools import setup
  
- 
+# reading the version directy from the example.py file 
 version = re.search(
     '^__version__\s*=\s*"(.*)"',
     open('example/example.py').read(),
     re.M
     ).group(1)
  
- 
-with open("README.md", "rb") as f:
-    long_descr = f.read().decode("utf-8")
- 
- 
 setup(
     name = "example-integrated",
     packages = ["example"],
+	# Here is where the magic happens, here setuptools create the script to give access
     entry_points = {
         "console_scripts": ['example-test = example.example:main']
         },
