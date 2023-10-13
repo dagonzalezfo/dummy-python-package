@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools" ]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "example-integrated"
+authors = [
+    {name = "danilo", email = "danilo@lala.com"},
+]
+description = "dummy package"
+readme = "README.md"
+requires-python = ">=3.7"
+version = "0.0.2"
+
+
+[project.scripts]
+launchertest = "example.example:main"
+#
+#[tool.setuptools.package.find]
+#where = ["src"]
+#
+
+[tool.setuptools.packages.find]
+where = ["src"] # where to find the packages
+
+[tool.setuptools.package-data] 
+"example.data" =["*.rst"] # add rst file that is in example.data
